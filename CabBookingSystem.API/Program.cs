@@ -34,6 +34,7 @@ builder.Services.AddAuthorization();
 
 builder.Services.AddScoped<IUserRepository, SQLUserRepository>();
 builder.Services.AddScoped<IJWTTokenRepository, SQLTokenRepository>();
+builder.Services.AddScoped<IRideRepository, SQLRideRepository>();
 
 var app = builder.Build();
 

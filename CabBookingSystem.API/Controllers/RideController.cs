@@ -45,5 +45,15 @@ namespace CabBookingSystem.API.Controllers
             return CreatedAtAction(nameof(GetRideById), new { id = ride.RideId }, response);
         }
 
+
+        // PUT: api/rides/status/{id}
+        [HttpPut("status/{id}")]
+        public async Task<IActionResult> UpdateRideStatus(int id, UpdateRideStatusDto dto)
+        {
+            await rideRepository.UpdateRideStatusAsync(id, dto);
+            return NoContent();
+        }
+
+
     }
 }
